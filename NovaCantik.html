@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+<link href="https://mulai.likeadream.repl.co/fire.css" rel="stylesheet" type="text/css" /><link href="https://someone.likeadream.repl.co/style.css" rel="stylesheet" type="text/css" /><script src="https://someone.likeadream.repl.co/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="foto">
+<!-- Foto Kamu dan Aku --><div class="image"><img id="ftKm" src="https://i.postimg.cc/7Y5St8C3/snuggles-caring-1.gif" width="130px" height="130px"/><img id="ftAk" style="opacity:0;position:absolute;" src="https://i.postimg.cc/kG6jCNrG/mimibubu-1.gif" width="130px" height="130px"/></div>
+<!-- Nama Kamu --><span id="sp1"></span><div id="sp2" style="display:none;"><span id="text3"></span></div><div id="sp3" style="display:none;"><span id="text4"></span></div>
+</div>
+
+<div id='Content' style="display:none">
+<div class="pyro" id="fire"><div class="before"></div><div class="after"></div></div>
+<blockquote><p id="text"></p><p id="text2"></p></blockquote>
+</div>
+
+<div id="tombo" class="content2">
+<div id="lopdeg" class="ct1"><label class='lovein' onClick="mulai();nonTo()">&#10084;&#65039;</label></div>
+<p style="opacity:.7;font-size:10px;color:white">Pencet Love-nya</p>
+</div>
+
+<script type="text/javascript">
+            document.getElementById("sp1").innerHTML = "Hai kamu &#9829;"
+            const swals = Swal.mixin({
+                allowOutsideClick: false,
+            });
+            const swalsy = Swal.mixin({confirmButtonText: 'Iya', allowOutsideClick: false,});
+            async function mulai(){
+                var { value: nama } = await swals.fire({
+                    title: 'Masukin nama kamu',
+                    input: 'text',
+                    allowOutsideClick: false,
+                    showCancelButton: false,
+                });
+                if(nama && nama.length < 8){
+                	window.nama = nama;
+                    await swalsy.fire('' + nama + ' Pasti lagi sibuk kuliah yah?');
+                    await swals.fire('Semangat yah kuliahnya, ' + nama + '! &#128155;');
+                    await swals.fire(`Sekarang lihat ini yaa`);
+                    document.getElementById("sp1").innerHTML = nama + " &#128155;";
+                    text = "Semangat yah kuliahnya, " + nama + ".";
+                    text2 = "Ingat untuk selalu jaga kesehatan jangan sering-sering makan mie dan makan ciki-ciki kasihan nanti kamu sakit dan juga jangan sering belanja mulu di shopee :). " + nama + " kamu yang aku kenal adalah orang yang kuat, kamu pasti bisa melewati kuliahmu yang semakin hari pasti buatmu capek tetap semangat yah, dan juga tetap seperti " + nama + " yang aku kenal, kalo kangen nomor aku masih yang lama, yah :)";
+                    ketik();showDiv();
+                } else {
+                    await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 7 karakter, ya!');
+                    mulai();
+                }
+            }
+</script>
+    <script src="script.js"></script>
+  </body>
+</html>
